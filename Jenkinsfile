@@ -2,11 +2,19 @@ pipeline{
     agent any
     stages {
         stage ('build') {
-            echo 'building phase'
+            steps {
+                script {
+                    echo 'building phase'
+                }
+            }
         }
-        stage ('Testing') {
-            echo 'Testing phase'
-            bat 'python -m unittest discover'
+        stage ('test'){
+            steps {
+                script{
+                    echo 'testing phase'
+                    bat 'python -m unittest discover'
+                }
+            }
         }
     }
     post {
