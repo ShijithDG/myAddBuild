@@ -12,7 +12,7 @@ pipeline{
             steps {
                 script{
                     echo 'testing phase'
-                    bat 'python -m unittest discover'
+                    sh 'python -m unittest discover'
                 }
             }
         }
